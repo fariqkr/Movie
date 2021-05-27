@@ -131,6 +131,13 @@ class DetailActivity : AppCompatActivity() {
                     .startChooser()
         }
 
+        var strFavorite = ""
+        if (filmEntity.favorite)
+            strFavorite = "Remove from Favorite"
+        else {
+            strFavorite = "Add to Favorite"
+        }
+        contentDetailFilmBinding.favorite.text =  strFavorite
         contentDetailFilmBinding.favorite.setOnClickListener {
             val extra = intent.extras
             if (extra != null){

@@ -67,28 +67,4 @@ class RemoteDataSource private constructor(private val jsonHelper: JsonHelper) {
         return resultMovie
     }
 
-//    fun getMovies(callback: LoadMoviesCallback) {
-//        EspressoIdlingResource.increment()
-//        handler.postDelayed({
-//            callback.onMoviesReceived(jsonHelper.loadMovies())
-//            EspressoIdlingResource.decrement()
-//        }, SERVICE_LATENCY_IN_MILLIS)
-//    }
-//
-//    fun getTvShows(callback: LoadTvShowsCallback) {
-//        EspressoIdlingResource.increment()
-//        handler.postDelayed({
-//            callback.onTvShowsReceived(jsonHelper.loadTvShows())
-//            EspressoIdlingResource.decrement()
-//        }, SERVICE_LATENCY_IN_MILLIS)
-//    }
-
-
-//    interface LoadMoviesCallback {
-//        fun onMoviesReceived(filmResponses: List<FilmResponse>)
-//    }
-//
-//    interface LoadTvShowsCallback {
-//        fun onTvShowsReceived(filmResponses: List<FilmResponse>)
-//    }
 }

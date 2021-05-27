@@ -26,12 +26,14 @@ class DetailViewModel(private val filmRepository: FilmRepository) : ViewModel() 
 
     fun setFavoriteMovie() {
         val filmEntity = movie.value?.data!!
-        filmRepository.setFavoriteMovie(filmEntity, true)
+        val newState = !movie.value?.data!!.favorite
+        filmRepository.setFavoriteMovie(filmEntity, newState)
     }
 
     fun setFavoriteTvShow() {
         val filmEntity = tvShow.value?.data!!
-        filmRepository.setFavoriteTvShow(filmEntity, true)
+        val newState = !tvShow.value?.data!!.favorite
+        filmRepository.setFavoriteTvShow(filmEntity, newState)
     }
 
 }
