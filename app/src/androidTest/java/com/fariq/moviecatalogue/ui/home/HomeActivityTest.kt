@@ -72,4 +72,23 @@ class HomeActivityTest {
                 )
             ))
     }
+
+    @Test
+    fun loadFavoriteMovies() {
+        Espresso.onView(ViewMatchers.withId(R.id.action_favorites)).perform(ViewActions.click())
+        Espresso.onView(ViewMatchers.withId(R.id.rv_movie)).check(
+            ViewAssertions.matches(
+                ViewMatchers.isDisplayed()))
+        Espresso.onView(ViewMatchers.withId(R.id.rv_movie)).perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(dummyMovie.size))
+    }
+
+    @Test
+    fun loadFavoriteTvShows() {
+        Espresso.onView(ViewMatchers.withId(R.id.action_favorites)).perform(ViewActions.click())
+        Espresso.onView(ViewMatchers.withText("TV Show")).perform(ViewActions.click())
+        Espresso.onView(ViewMatchers.withId(R.id.rv_tv_show)).check(
+            ViewAssertions.matches(
+                ViewMatchers.isDisplayed()))
+        Espresso.onView(ViewMatchers.withId(R.id.rv_tv_show)).perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(dummyTvShow.size))
+    }
 }
