@@ -58,6 +58,9 @@ class HomeActivityTest {
                     dummyMovie[0].desc
                 )
             ))
+        Espresso.onView(ViewMatchers.withId(R.id.favorite)).perform(ViewActions.click())
+        Espresso.onView(ViewMatchers.isRoot()).perform(ViewActions.pressBack())
+
     }
 
     @Test
@@ -71,6 +74,10 @@ class HomeActivityTest {
                     dummyTvShow[0].desc
                 )
             ))
+        Espresso.onView(ViewMatchers.withId(R.id.favorite)).perform(ViewActions.click())
+        Espresso.onView(ViewMatchers.isRoot()).perform(ViewActions.pressBack())
+
+
     }
 
     @Test
